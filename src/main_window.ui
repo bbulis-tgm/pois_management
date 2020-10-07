@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1187</width>
+    <height>721</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>POIs Management Tool</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>33</pointsize>
+        <italic>true</italic>
+        <strikeout>false</strikeout>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #3B81ED;
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>POIs Management</string>
+      </property>
+      <property name="scaledContents">
+       <bool>false</bool>
+      </property>
+      <property name="margin">
+       <number>20</number>
+      </property>
+      <property name="indent">
+       <number>0</number>
+      </property>
+      <property name="textInteractionFlags">
+       <set>Qt::LinksAccessibleByMouse|Qt::TextEditable</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTableWidget" name="table_main">
+      <column>
+       <property name="text">
+        <string>Name des POIs</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Kategorie</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Latitude</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Longitude</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Adresse</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Stadt</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Postleitzahl</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Länder Code</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Telefonnumer</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Information</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="pushButton_create_main">
+        <property name="text">
+         <string>Hinzufügen</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_load_main">
+        <property name="text">
+         <string>Laden</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_close_main">
+        <property name="text">
+         <string>Schließen</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1187</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="defaultUp">
+    <bool>false</bool>
+   </property>
+   <property name="nativeMenuBar">
+    <bool>false</bool>
+   </property>
+   <widget class="QMenu" name="menu_datei">
+    <property name="title">
+     <string>Datei</string>
+    </property>
+    <addaction name="action_new_file_main"/>
+    <addaction name="action_load_file_main"/>
+    <addaction name="action_save_file_main"/>
+    <addaction name="separator"/>
+    <addaction name="action_close_main"/>
+   </widget>
+   <widget class="QMenu" name="menu_hilfe">
+    <property name="title">
+     <string>Hilfe</string>
+    </property>
+    <addaction name="action_show_help_main"/>
+    <addaction name="action_about_main"/>
+   </widget>
+   <widget class="QMenu" name="menu_pois">
+    <property name="title">
+     <string>POIs</string>
+    </property>
+    <addaction name="action_create_main"/>
+    <addaction name="action_delete_main"/>
+    <addaction name="action_edit_main"/>
+    <addaction name="separator"/>
+    <addaction name="action_delete_all_main"/>
+   </widget>
+   <addaction name="menu_datei"/>
+   <addaction name="menu_pois"/>
+   <addaction name="menu_hilfe"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar_main"/>
+  <action name="action_show_help_main">
+   <property name="text">
+    <string>Hilfe anzeigen</string>
+   </property>
+  </action>
+  <action name="action_new_file_main">
+   <property name="text">
+    <string>Neue Datei</string>
+   </property>
+  </action>
+  <action name="action_load_file_main">
+   <property name="text">
+    <string>Datei laden</string>
+   </property>
+  </action>
+  <action name="action_save_file_main">
+   <property name="text">
+    <string>Speichern...</string>
+   </property>
+  </action>
+  <action name="action_close_main">
+   <property name="text">
+    <string>Beenden</string>
+   </property>
+  </action>
+  <action name="action_about_main">
+   <property name="text">
+    <string>Über...</string>
+   </property>
+  </action>
+  <action name="action_create_main">
+   <property name="text">
+    <string>POI hinzufügen</string>
+   </property>
+  </action>
+  <action name="action_delete_main">
+   <property name="text">
+    <string>POI löschen</string>
+   </property>
+  </action>
+  <action name="action_edit_main">
+   <property name="text">
+    <string>POI bearbeiten</string>
+   </property>
+  </action>
+  <action name="action_delete_all_main">
+   <property name="text">
+    <string>Alle POIs löschen</string>
+   </property>
+  </action>
+  <action name="actionEinstellungen">
+   <property name="text">
+    <string>Einstellungen</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
