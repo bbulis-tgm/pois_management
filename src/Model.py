@@ -1,5 +1,4 @@
 import csv
-from PyQt5.QtWidgets import QFileDialog
 
 
 class Model:
@@ -9,10 +8,7 @@ class Model:
         pass
 
     def read_file(self, fileName):
-        with open(fileName, 'r', encoding="utf-8") as file:
-            item = csv.reader(file, delimiter='|')
-            for row in item:
-                self.pois.append(row)
+
 
         print(self.pois)
 
@@ -21,3 +17,6 @@ class Model:
 
     def set_pois(self, pois):
         self.pois = pois
+
+    def print_pois(self):
+        print(self.pois)
