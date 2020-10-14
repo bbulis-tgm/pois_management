@@ -45,7 +45,7 @@ color: white;</string>
        <number>20</number>
       </property>
       <property name="indent">
-       <number>0</number>
+       <number>20</number>
       </property>
       <property name="textInteractionFlags">
        <set>Qt::LinksAccessibleByMouse|Qt::TextEditable</set>
@@ -53,7 +53,7 @@ color: white;</string>
      </widget>
     </item>
     <item>
-     <widget class="QTableWidget" name="table_main">
+     <widget class="QTableWidget" name="table_main_table">
       <column>
        <property name="text">
         <string>Name des POIs</string>
@@ -109,7 +109,7 @@ color: white;</string>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QPushButton" name="pushButton_create_main">
+       <widget class="QPushButton" name="pushButton_main_create">
         <property name="text">
          <string>Hinzufügen</string>
         </property>
@@ -129,14 +129,14 @@ color: white;</string>
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_load_main">
+       <widget class="QPushButton" name="pushButton_main_load">
         <property name="text">
          <string>Laden</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_close_main">
+       <widget class="QPushButton" name="pushButton_main_close">
         <property name="text">
          <string>Schließen</string>
         </property>
@@ -165,11 +165,11 @@ color: white;</string>
     <property name="title">
      <string>Datei</string>
     </property>
-    <addaction name="action_new_file_main"/>
-    <addaction name="action_load_file_main"/>
-    <addaction name="action_save_file_main"/>
+    <addaction name="action_main_new_file"/>
+    <addaction name="action_main_load_file"/>
+    <addaction name="action_main_save_file"/>
     <addaction name="separator"/>
-    <addaction name="action_close_main"/>
+    <addaction name="action_main_close"/>
    </widget>
    <widget class="QMenu" name="menu_hilfe">
     <property name="title">
@@ -198,22 +198,22 @@ color: white;</string>
     <string>Hilfe anzeigen</string>
    </property>
   </action>
-  <action name="action_new_file_main">
+  <action name="action_main_new_file">
    <property name="text">
     <string>Neue Datei</string>
    </property>
   </action>
-  <action name="action_load_file_main">
+  <action name="action_main_load_file">
    <property name="text">
     <string>Datei laden</string>
    </property>
   </action>
-  <action name="action_save_file_main">
+  <action name="action_main_save_file">
    <property name="text">
     <string>Speichern...</string>
    </property>
   </action>
-  <action name="action_close_main">
+  <action name="action_main_close">
    <property name="text">
     <string>Beenden</string>
    </property>

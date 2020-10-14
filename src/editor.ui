@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>624</width>
-    <height>489</height>
+    <height>491</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -44,7 +44,7 @@ color: white;</string>
    <item>
     <layout class="QGridLayout" name="gridLayout">
      <item row="11" column="2">
-      <widget class="QLineEdit" name="lineEdit_11"/>
+      <widget class="QLineEdit" name="lineEdit_poi_edit_phone"/>
      </item>
      <item row="4" column="2">
       <widget class="QLabel" name="label_6">
@@ -75,7 +75,7 @@ color: white;</string>
       </widget>
      </item>
      <item row="9" column="0" colspan="2">
-      <widget class="QLineEdit" name="lineEdit_8"/>
+      <widget class="QLineEdit" name="lineEdit_poi_edit_address"/>
      </item>
      <item row="6" column="0">
       <widget class="QLabel" name="label_7">
@@ -85,7 +85,7 @@ color: white;</string>
       </widget>
      </item>
      <item row="11" column="0" colspan="2">
-      <widget class="QLineEdit" name="lineEdit_10"/>
+      <widget class="QLineEdit" name="lineEdit_poi_edit_info"/>
      </item>
      <item row="8" column="0">
       <widget class="QLabel" name="label_9">
@@ -102,10 +102,10 @@ color: white;</string>
       </widget>
      </item>
      <item row="9" column="2">
-      <widget class="QLineEdit" name="lineEdit_9"/>
+      <widget class="QLineEdit" name="lineEdit_poi_edit_housenumber"/>
      </item>
      <item row="5" column="0">
-      <widget class="QLineEdit" name="lineEdit_4"/>
+      <widget class="QLineEdit" name="lineEdit_poi_edit_long"/>
      </item>
      <item row="0" column="1">
       <spacer name="horizontalSpacer_2">
@@ -121,7 +121,7 @@ color: white;</string>
       </spacer>
      </item>
      <item row="7" column="0" colspan="2">
-      <widget class="QLineEdit" name="lineEdit_5"/>
+      <widget class="QLineEdit" name="lineEdit_poi_edit_city"/>
      </item>
      <item row="10" column="2">
       <widget class="QLabel" name="label_12">
@@ -131,7 +131,7 @@ color: white;</string>
       </widget>
      </item>
      <item row="7" column="2">
-      <widget class="QLineEdit" name="lineEdit_7"/>
+      <widget class="QLineEdit" name="lineEdit_poi_edit_postalcode"/>
      </item>
      <item row="8" column="2">
       <widget class="QLabel" name="label_10">
@@ -148,20 +148,20 @@ color: white;</string>
       </widget>
      </item>
      <item row="5" column="2">
-      <widget class="QLineEdit" name="lineEdit_6"/>
+      <widget class="QLineEdit" name="lineEdit_poi_edit_lati"/>
      </item>
      <item row="1" column="0" colspan="2">
-      <widget class="QLineEdit" name="lineEdit"/>
+      <widget class="QLineEdit" name="lineEdit_poi_edit_name"/>
      </item>
      <item row="3" column="0" colspan="2">
-      <widget class="QLineEdit" name="lineEdit_2"/>
+      <widget class="QLineEdit" name="lineEdit_poi_edit_kategorie"/>
      </item>
     </layout>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="pushButton_poi_edit_cancle">
        <property name="text">
         <string>Abbrechen</string>
        </property>
@@ -181,7 +181,7 @@ color: white;</string>
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="pushButton_poi_edit_submit">
        <property name="text">
         <string>Speichern</string>
        </property>
@@ -191,6 +191,37 @@ color: white;</string>
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>lineEdit_poi_edit_name</tabstop>
+  <tabstop>lineEdit_poi_edit_kategorie</tabstop>
+  <tabstop>lineEdit_poi_edit_long</tabstop>
+  <tabstop>lineEdit_poi_edit_lati</tabstop>
+  <tabstop>lineEdit_poi_edit_city</tabstop>
+  <tabstop>lineEdit_poi_edit_postalcode</tabstop>
+  <tabstop>lineEdit_poi_edit_address</tabstop>
+  <tabstop>lineEdit_poi_edit_housenumber</tabstop>
+  <tabstop>lineEdit_poi_edit_info</tabstop>
+  <tabstop>lineEdit_poi_edit_phone</tabstop>
+  <tabstop>pushButton_poi_edit_cancle</tabstop>
+  <tabstop>pushButton_poi_edit_submit</tabstop>
+ </tabstops>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton_poi_edit_cancle</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>66</x>
+     <y>462</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>311</x>
+     <y>245</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
