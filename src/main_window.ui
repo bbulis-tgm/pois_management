@@ -76,7 +76,12 @@ color: white;</string>
       </column>
       <column>
        <property name="text">
-        <string>Adresse</string>
+        <string>Straße</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Hausnummer</string>
        </property>
       </column>
       <column>
