@@ -8,8 +8,6 @@ class Model:
         pass
 
     def read_file(self, fileName):
-
-
         print(self.pois)
 
     def get_pois(self):
