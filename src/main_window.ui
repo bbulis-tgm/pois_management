@@ -141,9 +141,9 @@ color: white;</string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_main_close">
+       <widget class="QPushButton" name="pushButton_main_save">
         <property name="text">
-         <string>Schließen</string>
+         <string>Speichern</string>
         </property>
        </widget>
       </item>

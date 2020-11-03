@@ -105,3 +105,6 @@ class POI:
 
     def get_phone(self):
         return self.phone
+
+    def to_string(self):
+        return "POI(" + self.id + ", " + self.category + ", " + self.name + ", (" + self.lati + ", " + self.long + "), " + self.countrycode + ", " + self.postalcode + ", " + self.city + ", " + self.street + ", " + self.housenumber + ", " + self.info + ", " + self.phone + ")"
