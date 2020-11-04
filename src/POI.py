@@ -3,10 +3,10 @@ class POI:
     category = ""
     name = ""
     icon = ""
-    lati = 0.0
-    long = 0.0
+    lati = ""
+    long = ""
     countrycode = ""
-    postalcode = 0
+    postalcode = ""
     city = ""
     street = ""
     housenumber = ""

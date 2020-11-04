@@ -1,6 +1,5 @@
 import csv
 from POI import POI
-from PyQt5 import QtWidgets
 
 class Model:
     pois_objects = []
@@ -8,12 +7,49 @@ class Model:
     def __init__(self):
         pass
 
-
     def read_file_content(self, fileName):
         with open(fileName, "r", encoding="utf-8") as file:
             content = csv.reader(file, delimiter='|')
             for row in content:
                 self.transform_file_content_to_poi_object(row)
+
+    def save_table_content_to_file(self, filename, table):
+        rowCount = table.rowCount()
+        rowCounter = 0
+
+        with open(filename, "w", encoding="utf-8") as file:
+            writer = csv.writer(file, delimiter='|', quoting=csv.QUOTE_NONE)
+            while rowCounter < rowCount:
+                category = table.item(rowCounter, 1).text()
+                name = table.item(rowCounter, 0).text()
+                icon = table.item(rowCounter, 11).text()
+                lati = table.item(rowCounter, 2).text()
+                long = table.item(rowCounter, 3).text()
+                countrycode = table.item(rowCounter, 8).text()
+                postalcode = table.item(rowCounter, 7).text()
+                city = table.item(rowCounter, 6).text()
+                street = table.item(rowCounter, 4).text()
+                housenumber = table.item(rowCounter, 5).text()
+                info = table.item(rowCounter, 10).text()
+                phonenumber = table.item(rowCounter, 9).text()
+                writer.writerow([rowCounter + 1,
+                                 category,
+                                 name,
+                                 icon,
+                                 lati,
+                                 long,
+                                 countrycode,
+                                 '',
+                                 '',
+                                 '',
+                                 postalcode,
+                                 city,
+                                 street,
+                                 housenumber,
+                                 info,
+                                 phonenumber])
+                rowCounter = rowCounter + 1
+
 
     def transform_file_content_to_poi_object(self, item):
         id = item[0]

@@ -1,10 +1,7 @@
 from PyQt5 import QtWidgets, uic
-from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem
+from PyQt5.QtWidgets import QTableWidgetItem
 from Model import Model
-from POI import POI
-import os
 import sys
-import csv
 
 
 class PoiMainWindow(QtWidgets.QMainWindow):
@@ -43,11 +40,13 @@ class PoiMainWindow(QtWidgets.QMainWindow):
             self.table_main_table.setItem(idx, 8, QTableWidgetItem(val.get_countrycode()))
             self.table_main_table.setItem(idx, 9, QTableWidgetItem(val.get_phone()))
             self.table_main_table.setItem(idx, 10, QTableWidgetItem(val.get_info()))
+            self.table_main_table.setItem(idx, 11, QTableWidgetItem(val.get_icon()))
 
     def save_table_content_to_file(self):
-        row_count = self.table_main_table.rowCount()
-        print(row_count)
-        print(self.table_main_table.item(1,0).text())
+        table = self.table_main_table
+        filename = QtWidgets.QFileDialog.getSaveFileName(self, "QFileDialog.getSaveFileName()", "", "POI File (*.upoi)")[0]
+        if filename:
+            self.model.save_table_content_to_file(filename, table)
 
     # model = None
     # pois_list = []

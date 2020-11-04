@@ -130,6 +130,11 @@ color: white;</string>
         <string>Information</string>
        </property>
       </column>
+      <column>
+       <property name="text">
+        <string>Icon Definition</string>
+       </property>
+      </column>
      </widget>
     </item>
     <item>
