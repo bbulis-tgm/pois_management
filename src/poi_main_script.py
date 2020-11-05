@@ -18,6 +18,7 @@ class PoiMainWindow(QtWidgets.QMainWindow):
         self.action_delete_all_main.triggered.connect(self.delete_every_row_from_table)
         self.action_main_close.triggered.connect(self.close)
         self.action_main_save_file.triggered.connect(self.save_table_content_to_file)
+        self.action_main_load_file.triggered.connect(self.file_open_dialog)
 
     def closeEvent(self, event):
         msg_box = QMessageBox()
