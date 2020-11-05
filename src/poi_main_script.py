@@ -1,5 +1,4 @@
 from PyQt5 import QtWidgets, uic
-from PyQt5.QtWidgets import QTableWidgetItem
 from Model import Model
 import sys
 
@@ -26,25 +25,12 @@ class PoiMainWindow(QtWidgets.QMainWindow):
             self.print_to_table_in_form()
 
     def print_to_table_in_form(self):
-        objects_list = self.model.get_pois()
-        for idx, val in enumerate(objects_list):
-            self.table_main_table.insertRow(idx)
-            self.table_main_table.setItem(idx, 0,QTableWidgetItem(val.get_name()))
-            self.table_main_table.setItem(idx, 1, QTableWidgetItem(val.get_category()))
-            self.table_main_table.setItem(idx, 2, QTableWidgetItem(val.get_lati()))
-            self.table_main_table.setItem(idx, 3, QTableWidgetItem(val.get_long()))
-            self.table_main_table.setItem(idx, 4, QTableWidgetItem(val.get_street()))
-            self.table_main_table.setItem(idx, 5, QTableWidgetItem(val.get_housenumber()))
-            self.table_main_table.setItem(idx, 6, QTableWidgetItem(val.get_city()))
-            self.table_main_table.setItem(idx, 7, QTableWidgetItem(val.get_postalcode()))
-            self.table_main_table.setItem(idx, 8, QTableWidgetItem(val.get_countrycode()))
-            self.table_main_table.setItem(idx, 9, QTableWidgetItem(val.get_phone()))
-            self.table_main_table.setItem(idx, 10, QTableWidgetItem(val.get_info()))
-            self.table_main_table.setItem(idx, 11, QTableWidgetItem(val.get_icon()))
+        table = self.table_main_table
+        self.model.print_content_from_list_to_table(table)
 
     def save_table_content_to_file(self):
         table = self.table_main_table
-        filename = QtWidgets.QFileDialog.getSaveFileName(self, "QFileDialog.getSaveFileName()", "", "POI File (*.upoi)")[0]
+        filename = QtWidgets.QFileDialog.getSaveFileName(self, "Speichern", "", "POI File (*.upoi)")[0]
         if filename:
             self.model.save_table_content_to_file(filename, table)
 

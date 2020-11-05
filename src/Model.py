@@ -1,5 +1,6 @@
 import csv
 from POI import POI
+from PyQt5.QtWidgets import QTableWidgetItem
 
 class Model:
     pois_objects = []
@@ -50,6 +51,21 @@ class Model:
                                  phonenumber])
                 rowCounter = rowCounter + 1
 
+    def print_content_from_list_to_table(self, table):
+        for idx, val in enumerate(self.pois_objects):
+            table.insertRow(idx)
+            table.setItem(idx, 0,QTableWidgetItem(val.get_name()))
+            table.setItem(idx, 1, QTableWidgetItem(val.get_category()))
+            table.setItem(idx, 2, QTableWidgetItem(val.get_lati()))
+            table.setItem(idx, 3, QTableWidgetItem(val.get_long()))
+            table.setItem(idx, 4, QTableWidgetItem(val.get_street()))
+            table.setItem(idx, 5, QTableWidgetItem(val.get_housenumber()))
+            table.setItem(idx, 6, QTableWidgetItem(val.get_city()))
+            table.setItem(idx, 7, QTableWidgetItem(val.get_postalcode()))
+            table.setItem(idx, 8, QTableWidgetItem(val.get_countrycode()))
+            table.setItem(idx, 9, QTableWidgetItem(val.get_phone()))
+            table.setItem(idx, 10, QTableWidgetItem(val.get_info()))
+            table.setItem(idx, 11, QTableWidgetItem(val.get_icon()))
 
     def transform_file_content_to_poi_object(self, item):
         id = item[0]
