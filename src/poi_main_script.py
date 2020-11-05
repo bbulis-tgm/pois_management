@@ -13,6 +13,7 @@ class PoiMainWindow(QtWidgets.QMainWindow):
         self.model = Model()
         self.pushButton_main_load.clicked.connect(self.file_open_dialog)
         self.pushButton_main_save.clicked.connect(self.save_table_content_to_file)
+        self.action_delete_main.triggered.connect(self.delete_row_from_table)
 
     def file_open_dialog(self):
         file_dialog = QtWidgets.QFileDialog()
@@ -33,6 +34,13 @@ class PoiMainWindow(QtWidgets.QMainWindow):
         if filename:
             self.model.save_table_content_to_file(filename, table)
 
+    def delete_row_from_table(self):
+        items = self.table_main_table.selectedItems()
+        if len(items) < 1:
+            return 0
+        item = items[0]
+        row_number = self.table_main_table.row(item)
+        self.table_main_table.removeRow(row_number)
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
