@@ -1,4 +1,5 @@
 from PyQt5 import QtWidgets, uic
+from PyQt5.QtWidgets import QMessageBox
 from Model import Model
 import sys
 
@@ -15,6 +16,18 @@ class PoiMainWindow(QtWidgets.QMainWindow):
         self.pushButton_main_save.clicked.connect(self.save_table_content_to_file)
         self.action_delete_main.triggered.connect(self.delete_row_from_table)
         self.action_delete_all_main.triggered.connect(self.delete_every_row_from_table)
+        self.action_main_close.triggered.connect(self.close)
+
+    def closeEvent(self, event):
+        msg_box = QMessageBox()
+        msg_box.setIcon(QMessageBox.Warning)
+        msg_box.setText("Wollen Sie ohne speichern Schließen?")
+        msg_box.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        return_value = msg_box.exec()
+        if return_value == QMessageBox.Yes:
+            event.accept()
+        else:
+            event.ignore()
 
     def file_open_dialog(self):
         file_dialog = QtWidgets.QFileDialog()
