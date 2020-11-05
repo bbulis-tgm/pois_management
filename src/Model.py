@@ -94,6 +94,12 @@ class Model:
             table.setItem(idx, 10, QTableWidgetItem(val.get_info()))
             table.setItem(idx, 11, QTableWidgetItem(val.get_icon()))
 
+    def add_new_element_to_table(self, table):
+        rowCount = table.rowCount()
+        table.insertRow(rowCount)
+        for i in range(0,12):
+            table.setItem(rowCount, i, QTableWidgetItem(""))
+
     def delete_every_poi_from_table(self, table):
         """
         Funktion um die ganze Tabelle und die Liste zu leeren

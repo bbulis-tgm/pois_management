@@ -24,6 +24,8 @@ class PoiMainWindow(QtWidgets.QMainWindow):
         self.model = Model()
         self.pushButton_main_load.clicked.connect(self.file_open_dialog)
         self.pushButton_main_save.clicked.connect(self.save_table_content_to_file)
+        self.pushButton_main_create.clicked.connect(self.add_element_to_table)
+        self.action_create_main.triggered.connect(self.add_element_to_table)
         self.action_delete_main.triggered.connect(self.delete_row_from_table)
         self.action_delete_all_main.triggered.connect(self.delete_every_row_from_table)
         self.action_main_close.triggered.connect(self.close)
@@ -87,6 +89,10 @@ class PoiMainWindow(QtWidgets.QMainWindow):
         """
         table = self.table_main_table
         self.model.delete_every_poi_from_table(table)
+
+    def add_element_to_table(self):
+        table = self.table_main_table
+        self.model.add_new_element_to_table(table)
 
     def delete_row_from_table(self):
         """
