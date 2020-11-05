@@ -11,6 +11,7 @@ class Model:
     def read_file_content(self, fileName):
         with open(fileName, "r", encoding="utf-8") as file:
             content = csv.reader(file, delimiter='|')
+            self.pois_objects.clear()
             for row in content:
                 self.transform_file_content_to_poi_object(row)
 
@@ -52,6 +53,12 @@ class Model:
                 rowCounter = rowCounter + 1
 
     def print_content_from_list_to_table(self, table):
+        rowCount = table.rowCount()
+        if rowCount > 0:
+            for i in range(0, rowCount-1):
+                table.removeRow(0)
+                table.setRowCount(0)
+
         for idx, val in enumerate(self.pois_objects):
             table.insertRow(idx)
             table.setItem(idx, 0,QTableWidgetItem(val.get_name()))
@@ -66,6 +73,14 @@ class Model:
             table.setItem(idx, 9, QTableWidgetItem(val.get_phone()))
             table.setItem(idx, 10, QTableWidgetItem(val.get_info()))
             table.setItem(idx, 11, QTableWidgetItem(val.get_icon()))
+
+    def delete_every_poi_from_table(self, table):
+        rowCount = table.rowCount()
+        print(rowCount)
+        if rowCount > 0:
+            for i in range(0, rowCount):
+                table.removeRow(0)
+                table.setRowCount(0)
 
     def transform_file_content_to_poi_object(self, item):
         id = item[0]
