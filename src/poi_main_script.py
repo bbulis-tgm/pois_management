@@ -17,11 +17,12 @@ class PoiMainWindow(QtWidgets.QMainWindow):
         self.action_delete_main.triggered.connect(self.delete_row_from_table)
         self.action_delete_all_main.triggered.connect(self.delete_every_row_from_table)
         self.action_main_close.triggered.connect(self.close)
+        self.action_main_save_file.triggered.connect(self.save_table_content_to_file)
 
     def closeEvent(self, event):
         msg_box = QMessageBox()
         msg_box.setIcon(QMessageBox.Warning)
-        msg_box.setText("Wollen Sie ohne speichern Schließen?")
+        msg_box.setText("Wollen Sie wirklich schließen?\n Daten gehen verloren")
         msg_box.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
         return_value = msg_box.exec()
         if return_value == QMessageBox.Yes:
